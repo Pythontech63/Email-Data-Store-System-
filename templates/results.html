@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Results</title>
+</head>
+<body>
+    <h1>Fetched Emails</h1>
+    {% if emails %}
+        <ul>
+        {% for sender, (subject, body) in emails.items() %}
+            <li>
+                <strong>Sender:</strong> {{ sender }}<br>
+                <strong>Subject:</strong> {{ subject }}<br>
+                <strong>Body:</strong> {{ body }}<br><br>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No emails found with the given subject.</p>
+    {% endif %}
+</body>
+</html>
